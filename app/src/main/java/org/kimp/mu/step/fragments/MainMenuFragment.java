@@ -18,6 +18,27 @@ public class MainMenuFragment extends Fragment {
     @Nullable @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentMainMenuBinding.inflate(inflater, container, false);
+
+        binding.fmmStartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle action = new Bundle();
+                action.putString("action", "start");
+                getParentFragmentManager()
+                        .setFragmentResult("requestKey", action);
+            }
+        });
+
+        binding.fmmSettingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle action = new Bundle();
+                action.putString("action", "settings");
+                getParentFragmentManager()
+                        .setFragmentResult("requestKey", action);
+            }
+        });
+
         return binding.getRoot();
     }
 

@@ -1,6 +1,8 @@
 package org.kimp.mu.step;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,7 +11,7 @@ import android.os.Looper;
 import org.kimp.mu.step.databinding.ActivityMainBinding;
 import org.kimp.mu.step.fragments.MainMenuFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentResultListener {
     private ActivityMainBinding binding;
 
     @Override
@@ -32,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
                             .commit();
                 }
             }, 600);
+        }
+    }
+
+    @Override
+    public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+        if (result.getString("action").equals("start")) {
+            // TODO
+        }
+        if (result.getString("action").equals("settings")) {
+            // TODO
         }
     }
 }

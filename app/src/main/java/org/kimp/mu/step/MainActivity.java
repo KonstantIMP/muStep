@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity implements FragmentResultLis
                 }
             }, 600);
         }
+
+        getSupportFragmentManager()
+                .setFragmentResultListener("requestKey", this, this);
     }
 
     @Override

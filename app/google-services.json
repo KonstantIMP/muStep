@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "309011098640",
+    "project_id": "mustep-fbc68",
+    "storage_bucket": "mustep-fbc68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309011098640:android:3c8254260797fa5a8b6e95",
+        "android_client_info": {
+          "package_name": "org.kimp.mu.step"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309011098640-9tgkq90554opsrh70pslftqvur2epu4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMJ0lytKkPQyr5pxv6KvBgskNdHGWAJ_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309011098640-9tgkq90554opsrh70pslftqvur2epu4d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

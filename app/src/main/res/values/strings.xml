@@ -4,4 +4,6 @@
     <string name="fmm_start_btn_label">Start</string>
     <string name="fmm_settings_btn_label">Settings</string>
     <string name="fmm_powered_by_label" translatable="false">by KonstantIMP</string>
+
+    <string name="ua_back_btn_desc">Return to the menu</string>
 </resources>

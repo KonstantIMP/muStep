@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MuStep"
         tools:targetApi="31">
+        <activity
+            android:name=".UniversitiesActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="com.here.sdk.access_key_id"

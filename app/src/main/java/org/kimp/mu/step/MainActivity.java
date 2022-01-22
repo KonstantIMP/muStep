@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentResultListener;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -43,7 +44,8 @@ public class MainActivity extends AppCompatActivity implements FragmentResultLis
     @Override
     public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
         if (result.getString("action").equals("start")) {
-            // TODO
+            Intent intent = new Intent(this, UniversitiesActivity.class);
+            startActivity(intent);
         }
         if (result.getString("action").equals("settings")) {
             // TODO

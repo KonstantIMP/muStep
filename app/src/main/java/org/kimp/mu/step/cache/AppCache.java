@@ -57,23 +57,13 @@ public class AppCache {
             FirebaseStorage storage = FirebaseStorage.getInstance();
             StorageReference pathReference = storage.getReference().child(firebasePath);
 
-            pathReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                @Override
-                public void onSuccess(Uri uri) {
-                    TaskRunner cacheImage = new TaskRunner();
-                    cacheImage.executeAsync(() -> {
-                        return Picasso.get().load(uri).get();
-                    }, (data) -> {
-                        putImage(id, data);
-                        view.setImageBitmap(data);
-                    });
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e("IMAGE_CACHE", "Failed to download image: " + firebasePath + ", reason: " + e.getMessage());
-                }
-            });
+            pathReference.getDownloadUrl().addOnSuccessListener(uri -> {
+                TaskRunner cacheImage = new TaskRunner();
+                cacheImage.executeAsync(() -> Picasso.get().load(uri).get(), (data) -> {
+                    putImage(id, data);
+                    view.setImageBitmap(data);
+                });
+            }).addOnFailureListener(e -> Log.e("IMAGE_CACHE", "Failed to download image: " + firebasePath + ", reason: " + e.getMessage()));
         }
     }
 
